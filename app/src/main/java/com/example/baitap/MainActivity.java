@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private String currentFilterType = null;
     private String currentFilterValue = null;
 
+    private TextView tvTotal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ExpenseAdapter(this, expenseList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        tvTotal = findViewById(R.id.tvTotal);
 
         // 1. Tải dữ liệu ban đầu
         loadExpenses(null, null);
@@ -77,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             total += e.getAmount();
         }
         String totalFormatted = String.format(Locale.US, "%,.0f VNĐ", total);
-        setTitle("Quản Lý Chi Tiêu (Tổng: " + totalFormatted + ")");
+        tvTotal.setText("Tổng chi tiêu: " + totalFormatted);
     }
 
     // --- Xử lý Dialog Lọc ---

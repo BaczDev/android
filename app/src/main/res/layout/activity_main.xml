@@ -19,6 +19,16 @@
             android:text="Lọc Chi Tiêu"
             android:layout_margin="8dp"/>
 
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tổng: 0 VNĐ"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewExpenses"
             android:layout_width="match_parent"

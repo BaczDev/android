@@ -16,7 +16,9 @@ public class AddEditExpenseActivity extends AppCompatActivity {
     private EditText etDescription, etAmount, etDate;
     private Button btnSave;
     private DBHelper dbHelper;
-    private int expenseId = -1; // -1 cho thêm mới, > 0 cho sửa
+    private int expenseId = -1;
+
+    private Button btnBack ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,10 @@ public class AddEditExpenseActivity extends AppCompatActivity {
         etAmount = findViewById(R.id.etAmount);
         etDate = findViewById(R.id.etDate);
         btnSave = findViewById(R.id.btnSave);
+        btnBack =  findViewById(R.id.btnBack);
         dbHelper = new DBHelper(this);
+        btnBack.setOnClickListener(v -> finish());
+
 
         // Xử lý DatePicker cho etDate
         etDate.setOnClickListener(v -> showDatePickerDialog());
