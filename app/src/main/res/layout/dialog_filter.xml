@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chọn Tiêu Chí Lọc:"
+        android:textStyle="bold"
+        android:textSize="16sp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/rbDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày"
+            android:tag="day"
+            android:checked="true"
+            android:layout_marginEnd="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tháng"
+            android:tag="month"
+            android:layout_marginEnd="16dp"/>
+
+        <RadioButton
+            android:id="@+id/rbYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Năm"
+            android:tag="year"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/etFilterValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập giá trị (Ví dụ: 2024-10 hoặc 2024)"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btnResetFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Đặt Lại"/>
+
+        <Button
+            android:id="@+id/btnApplyFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Áp Dụng"/>
+
+    </LinearLayout>
+
+</LinearLayout>
